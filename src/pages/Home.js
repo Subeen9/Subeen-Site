@@ -23,6 +23,9 @@ const IconContainer = styled("div")({
   width: "50px",
   height: "50px",
   margin: "10px",
+  '&:hover':{
+    boxShadow: '0px 0px 10px 5px rgba(0, 0, 0, 0.5)',
+  }
 });
 const HighlightedText = styled(Typography)({
   fontSize: "4rem",
@@ -34,6 +37,11 @@ const HighlightedButton = styled(Button)({
   padding: "10px 20px",
   border: "2px solid #191970",
   backgroundColor: "#ADD8E6",
+  boxShadow: '3px 3px 10px rgba(0, 0, 0, 0.2)',
+ 
+  '&:hover':{
+    fontWeight: 'bolder'
+  }
 });
 
 export const Home = () => {
