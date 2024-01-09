@@ -1,8 +1,9 @@
 import React from "react";
-import { Button, Divider, Grid, Paper, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { Button, Divider, Grid, Typography } from "@mui/material";
 import styled from "@emotion/styled";
-import Table from "@mui/material/Table";
-import JavascriptIcon from '@mui/icons-material/Javascript';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faCss3Alt, faGit, faGithub, faHtml5, faJava, faJs, faReact} from '@fortawesome/free-brands-svg-icons'
+import FirebaseIcon from '../assests/firebase (2).png'
 const Customdivider = styled(Divider)({
   width: "4%",
   margin: "auto",
@@ -52,15 +53,19 @@ export const About = () => {
         </Grid>
         <Grid item xs={6}>
         <Typography variant="h5" style={{textAlign: 'center', fontWeight:'bold'}}>Skills</Typography>
-        <TableContainer component={Paper}>
-            <Table>
-            <TableHead>
-                <TableRow>
-                    <TableCell><JavascriptIcon/></TableCell>
-                </TableRow>
-            </TableHead>
-            </Table>
-        </TableContainer>
+        <Grid item xs={12}>
+        <FontAwesomeIcon icon={faJs} style={{marginLeft:'150px', fontSize:'60px', marginTop:'50px'}} />
+        <FontAwesomeIcon icon={faReact} style={{marginLeft:'90px', fontSize:'60px'}} />
+        <FontAwesomeIcon icon={faHtml5} style={{marginLeft:'90px', fontSize:'60px'}} />
+        <FontAwesomeIcon icon={faCss3Alt} style={{marginLeft:'90px', fontSize:'60px'}} />
+        </Grid>
+        <Grid item xs={12}>
+        <FontAwesomeIcon icon={faGit} style={{marginLeft:'150px', fontSize:'60px', marginTop:'50px'}} />
+        <FontAwesomeIcon icon={faGithub} style={{marginLeft:'90px', fontSize:'60px'}} />
+        <FontAwesomeIcon icon={faJava} style={{marginLeft:'90px', fontSize:'60px'}} />
+        <img src={FirebaseIcon} style={{marginLeft:'90px', fontSize:'20px'}} alt="firebase icon" />
+        </Grid>
+        
         </Grid>
       </Grid>
     </>
