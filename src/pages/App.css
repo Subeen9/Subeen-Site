@@ -9,4 +9,12 @@
       transform: translateY(0px);
     }
   }
+  .card {
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    background-color: #f5f5f5; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
+  }  
   

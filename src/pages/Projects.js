@@ -7,6 +7,7 @@ import UserAuth from '../assests/UserAuth.png'
 import Nsas from '../assests/siteselu.png'
 import DipikaSite from '../assests/dipika.png'
 import BinaryTree from '../assests/Binary Tree.png'
+import './App.css'
 const CustomDivider = styled(Divider)({
     width: "4%",
     margin: "auto",
@@ -17,7 +18,7 @@ const CustomDivider = styled(Divider)({
 export const ProjectCard =({image, alt,title, text, link})=>{
   return(
   
-  <Card sx={{maxWidth:300, margin:'auto', marginTop:'40px'}}>
+  <Card sx={{maxWidth:300, margin:'auto', marginTop:'40px'}} className='card'>
   <CardActionArea>
       <CardMedia
       component='img'
@@ -41,7 +42,8 @@ export const ProjectCard =({image, alt,title, text, link})=>{
     </Typography>
   </CardContent>
   <CardActions>
-    <Button size='small'onClick={()=>(window.location.href={link})}>Learn More</Button>
+  <Button size='small' onClick={() => window.location.href = link}>Learn More</Button>
+
   </CardActions>
      
   </CardActionArea>
