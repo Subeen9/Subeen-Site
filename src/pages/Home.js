@@ -2,7 +2,7 @@ import React from "react";
 import { Grid, Typography, Button, Stack } from "@mui/material";
 import Subin from "../assests/subin2.png";
 import Cloud from "../assests/cloud.png";
-import "./App.css";
+import "../App.css";
 import styled from "@emotion/styled";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";

@@ -1,10 +1,12 @@
 import React from 'react';
 import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab'
-import { AppBar, Box,Avatar } from '@mui/material';
+import Tab from '@mui/material/Tab';
+import { AppBar, Box, Avatar } from '@mui/material';
 import styled from '@emotion/styled';
-// import SB from '../assests/PXL_20231205_033511168.MP.jpg'
+import { NavLink } from 'react-router-dom';
+import { animateScroll as scroll } from 'react-scroll';
 import { deepOrange } from '@mui/material/colors';
+
 const NameTab = styled(Tab)({
     color: 'black',
     fontWeight: 'bold',
@@ -12,17 +14,19 @@ const NameTab = styled(Tab)({
         color:'purple'
     }
 });
+
 const ItemTab =styled(Tab)({
     '&:hover':{
         color: 'purple'
     },
     fontWeight: 'bold'
-
-})
-
-
+});
 
 export const Navigation =()=>{
+    const scrollToTop = () => {
+        scroll.scrollToTop();
+    };
+
     return(
         <>
         <AppBar style={{backgroundColor:'white', height: '80px'}}>
@@ -30,10 +34,10 @@ export const Navigation =()=>{
             <Avatar sx={{bgcolor:deepOrange[500]}}>SB</Avatar>
             <NameTab label="Subin Bista"></NameTab>
             <Box sx={{ flexGrow: 1 }} />
-            <ItemTab label =" Home"></ItemTab>
-            <ItemTab label =" Contact"></ItemTab>
-            <ItemTab label ="Projects"></ItemTab>
-            <ItemTab label ="About Me"></ItemTab>
+            <ItemTab label="Home" component={NavLink} to="/" onClick={scrollToTop}></ItemTab>
+            <ItemTab label="Contact" component={NavLink} to="/contact" onClick={scrollToTop}></ItemTab>
+            <ItemTab label="Projects" component={NavLink} to="/projects" onClick={scrollToTop}></ItemTab>
+            <ItemTab label="About Me" component={NavLink} to="/about" onClick={scrollToTop}></ItemTab>
         </Tabs>
         </AppBar>
         </>

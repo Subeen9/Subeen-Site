@@ -7,7 +7,7 @@ import UserAuth from '../assests/UserAuth.png'
 import Nsas from '../assests/siteselu.png'
 import DipikaSite from '../assests/dipika.png'
 import BinaryTree from '../assests/Binary Tree.png'
-import './App.css'
+import '../App.css'
 const CustomDivider = styled(Divider)({
     width: "4%",
     margin: "auto",
