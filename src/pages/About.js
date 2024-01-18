@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faCss3Alt, faGit, faGithub, faHtml5, faJava, faJs, faReact} from '@fortawesome/free-brands-svg-icons'
 import FirebaseIcon from '../assests/firebase (2).png'
+import { scroller } from "react-scroll";
 const Customdivider = styled(Divider)({
   width: "4%",
   margin: "auto",
@@ -17,22 +18,31 @@ const StyledButton =styled(Button)({
     backgroundColor: "#191970",
     border: "2px solid #191970",
     color:'white',
+    marginLeft:'10px',
     '&:hover':{
         fontWeight:'bolder',
         backgroundColor:'#191970'
     }
 })
+const handleClick =()=>{
+  scroller.scrollTo('contact',
+  {duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart',
+      offset:50,})
+}
 
 export const About = () => {
   return (
     <>
+    <div id="about">
       <h1 style={{ textAlign: "center" }}>About Me</h1>
       <Customdivider />
       <Grid container>
         <Grid item xs={6}>
-          <Typography style={{fontWeight:'bold'}}> Yours Truely,</Typography>
+          <Typography style={{fontWeight:'bold', marginLeft:'10px'}}> Yours Truely,</Typography>
           <br/>
-          <Typography >
+          <Typography style={{marginLeft:'10px'}}>
             I’m Subin Bista, a Computer Science student at Southeastern
             Louisiana University with a 4.0 GPA. I’ve worked as a Research
             Assistant, building a student portal using React JS and Firebase.
@@ -42,12 +52,12 @@ export const About = () => {
             contributing more to the field of Computer Science.
           </Typography>
           <br/>
-          <Typography>
+          <Typography style={{marginLeft:'10px'}}>
           I am open to job opportunities and internships that will allow me to grow and learn more.
            Please don’t hesitate to contact me if you believe my skills could be valuable to your team.
            <br/>
            <br/>
-           <StyledButton>Contact</StyledButton>
+           <StyledButton onClick={handleClick}>Contact</StyledButton>
           </Typography>
           
         </Grid>
@@ -68,6 +78,7 @@ export const About = () => {
         
         </Grid>
       </Grid>
+      </div>
     </>
   );
 };

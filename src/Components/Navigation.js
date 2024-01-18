@@ -3,43 +3,44 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { AppBar, Box, Avatar } from '@mui/material';
 import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
 import { deepOrange } from '@mui/material/colors';
+import { Link } from 'react-scroll';
 
 const NameTab = styled(Tab)({
-    color: 'black',
-    fontWeight: 'bold',
-    '&:hover':{
-        color:'purple'
-    }
+  color: 'black',
+  fontWeight: 'bold',
+ 
+  '&:hover': {
+    color: 'purple'
+  }
 });
 
-const ItemTab =styled(Tab)({
-    '&:hover':{
-        color: 'purple'
-    },
-    fontWeight: 'bold'
+const ItemTab = styled(Tab)({
+  '&:hover': {
+    color: 'purple'
+  },
+  fontWeight: 'bold'
 });
 
-export const Navigation =()=>{
-    const scrollToTop = () => {
-        scroll.scrollToTop();
-    };
+export const Navigation = () => {
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
-    return(
-        <>
-        <AppBar style={{backgroundColor:'white', height: '80px'}}>
-        <Tabs style={{marginTop:'10px', padding: 0, display:'flex', alignContent: 'center', justifyContent:"center",}}>
-            <Avatar sx={{bgcolor:deepOrange[500]}}>SB</Avatar>
-            <NameTab label="Subin Bista"></NameTab>
-            <Box sx={{ flexGrow: 1 }} />
-            <ItemTab label="Home" component={NavLink} to="/" onClick={scrollToTop}></ItemTab>
-            <ItemTab label="Contact" component={NavLink} to="/contact" onClick={scrollToTop}></ItemTab>
-            <ItemTab label="Projects" component={NavLink} to="/projects" onClick={scrollToTop}></ItemTab>
-            <ItemTab label="About Me" component={NavLink} to="/about" onClick={scrollToTop}></ItemTab>
+  return (
+    <>
+      <AppBar style={{ backgroundColor: 'white', height: '80px' }}>
+        <Tabs style={{ marginTop: '10px', padding: 0, display: 'flex', alignContent: 'center', justifyContent: "center", }}>
+          <Avatar sx={{ bgcolor: deepOrange[500] }} style={{ marginLeft:'5px'}}>SB</Avatar>
+          <NameTab label="Subin Bista" onClick={scrollToTop}></NameTab>
+          <Box sx={{ flexGrow: 1 }} />
+          <Link to="home" spy={true} smooth={true} offset={30} duration={500}  style={{color:'black'}}><ItemTab label="Home" /></Link>
+          <Link to="contact" spy={true} smooth={true} offset={50} duration={500} style={{color:'black'}}><ItemTab label="Contact" /></Link>
+          <Link to="projects" spy={true} smooth={true} offset={-100} duration={500} style={{color:'black'}}><ItemTab label="Projects" /></Link>
+          <Link to="about" spy={true} smooth={true} offset={-110} duration={500} style={{color:'black'}}><ItemTab label="About Me" /></Link>
         </Tabs>
-        </AppBar>
-        </>
-    )
+      </AppBar>
+    </>
+  )
 }

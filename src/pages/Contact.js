@@ -13,13 +13,14 @@ export const CustomDivider =styled(Divider)({
 export const Contact = ()=>{ 
     return(
         <>
+        <div id="contact">
         <h1 style={{textAlign:'center'}}>Contact</h1>
         <CustomDivider/>
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-        <Typography variant ='h5' style={{textAlign:'center', marginTop:'40px'}}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '70vh' }}>
+        <Typography variant ='h5' style={{textAlign:'center', marginTop:'10px'}}>
             Feel Free to contact me using the Form below.
         </Typography>
-        <Paper elevation={3} sx={{ padding: '20px', marginTop: '40px', width: '80%', maxWidth: '800px',}}>
+        <Paper elevation={3} sx={{ padding: '20px', marginTop: '10px', width: '80%', maxWidth: '800px',}}>
                 <Stack
                     component="form"
                     spacing={2}
@@ -58,6 +59,7 @@ export const Contact = ()=>{
                 </Stack>
             </Paper>
             </Box>
+            </div>
        </>
     )
 }
