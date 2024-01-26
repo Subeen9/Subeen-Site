@@ -120,7 +120,7 @@ export const Home = () => {
               marginTop: "2px",
               width: "100%",
               height: "auto",
-              marginRight: "90px",
+              
             }}
             alt="profile image"
           />
