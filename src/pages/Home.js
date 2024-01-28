@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Button, Stack } from "@mui/material";
+import { Grid, Typography, Button, Stack, Hidden, useMediaQuery } from "@mui/material";
 import Subin from "../assests/subin2.png";
 import Cloud from "../assests/cloud.png";
 import "../App.css";
@@ -8,11 +8,13 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { scroller } from "react-scroll";
+import { useTheme } from "@emotion/react";
+
 
 
 const CenterContent = styled("div")({
   display: "flex",
-  justifyContent: "center",
+  justifyContent:'center',
   color: "#191970",
   marginLeft: "120px",
 });
@@ -56,11 +58,15 @@ const handleClick =()=>{
 }
 
 export const Home = () => {
+  const theme = useTheme();
+   console.log(theme);
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <>
     <div id="home">
+      
       <Grid container spacing={2} style={{ backgroundColor: "#ADD8E6" }}>
-        <Grid item xs={8} style={{ marginTop: "90px" }}>
+        <Grid item xs={12} sm={8} style={{ marginTop: "90px", marginBottom: isMobile ?'15px':'0px' }}>
           <img
             src={Cloud}
             style={{ animation: "float 5s ease-in-out infinite" }}
@@ -74,22 +80,26 @@ export const Home = () => {
           <br />
           <CenterContent>
             <Typography variant="h6">
-              Computer Science Student interested in Full Stack development
+              Computer Science Student interested in Full Stack development.
             </Typography>
           </CenterContent>
           <br />
           <br />
           <CenterContent>
+          
             <HighlightedButton
+            
               variant="contained"
-              style={{ backgroundColor: "#191970", color: "#FFFFFF" }}
+              style={{ backgroundColor: "#191970", color: "#FFFFFF",marginRight: isMobile ? '10px' :'0px'  }}
               onClick={handleClick}
             >
-              See my Projects
+            {isMobile?"Projects": " See my Projects"}
             </HighlightedButton>
           </CenterContent>
+          
           <Grid xs={0.6} style={{marginLeft:'10px'}}>
-            <Stack spacing={2}>
+            <Hidden smDown>
+            <Stack direction= {isMobile ? "row":"column"} spacing={2}>  
             <IconContainer>
   <a href='https://www.linkedin.com/in/subin-bista-' target="_blank" rel="noopener noreferrer">
     <LinkedInIcon fontSize="large" />
@@ -110,10 +120,13 @@ export const Home = () => {
 
               <br />
             </Stack>
+            </Hidden>
           </Grid>
         </Grid>
-        <Grid item xs={4}>
+        <Hidden smDown>
+        <Grid item xs={0} sm={4}>
           {/* <img src={Cloud} style={{animation: 'float 5s ease-in-out infinite'}} className="float" alt="profile"/> */}
+          
           <img
             src={Subin}
             style={{
@@ -125,7 +138,9 @@ export const Home = () => {
             alt="profile image"
           />
         </Grid>
+        </Hidden>
       </Grid>
+    
       </div>
     </>
   );
