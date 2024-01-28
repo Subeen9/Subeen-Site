@@ -17,7 +17,7 @@ export const Contact = ()=>{
         <h1 style={{textAlign:'center'}}>Contact</h1>
         <CustomDivider/>
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '70vh' }}>
-        <Typography variant ='h5' style={{textAlign:'center', marginTop:'10px'}}>
+        <Typography variant ='h6' style={{textAlign:'center', marginTop:'10px', fontFamily:'DM Sans'}}>
             Feel Free to contact me using the Form below.
         </Typography>
         <Paper elevation={3} sx={{ padding: '20px', marginTop: '10px', width: '80%', maxWidth: '800px',}}>

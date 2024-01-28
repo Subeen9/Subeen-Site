@@ -134,7 +134,7 @@ export const Navigation = () => {
             
             
             <IconButton onClick={handleClick}>
-  <MenuIcon style={{fontSize:'2.3rem', marginLeft:'300px', marginBottom:'20px',color:'black'}} />
+  <MenuIcon style={{fontSize:'2.3rem', marginLeft:'250px', marginBottom:'20px',color:'black'}} />
 </IconButton>
 <Menu open={open} anchorEl={anchorEl} onClose={handleClose}>
   <MenuList sx={{width:'100vw'}}>

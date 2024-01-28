@@ -59,7 +59,6 @@ const handleClick =()=>{
 
 export const Home = () => {
   const theme = useTheme();
-   console.log(theme);
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <>
@@ -135,7 +134,7 @@ export const Home = () => {
               height: "auto",
               
             }}
-            alt="profile image"
+            alt="profile images"
           />
         </Grid>
         </Hidden>

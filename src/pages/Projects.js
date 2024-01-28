@@ -45,6 +45,8 @@ export const ProjectCard = ({ image, alt, title, text, link }) => {
             left: "50%",
             transform: "translateX(-50%)",
           }}
+
+
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
@@ -66,11 +68,11 @@ export const ProjectCard = ({ image, alt, title, text, link }) => {
 export const Projects = () => {
   return (
     <>
-      <div id="projects">
+      <div id="projects" style={{backgroundColor:'#F5F5F5'}}>
         <h1 style={{ textAlign: "center" }}>Projects</h1>
         <CustomDivider />
         <Grid container spacing={2}>
-          <Grid item xs={4}>
+          <Grid item xs={12}sm={4}>
             <ProjectCard
               image={SeluStore}
               alt="Selu Thrift store"
@@ -79,7 +81,7 @@ export const Projects = () => {
               link="https://github.com/Subeen9/CMPS-285-Fall-23-Thrift-Store-"
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12}sm={4}>
             <ProjectCard
               image={NoteKeeper}
               alt="Note App"
@@ -88,7 +90,7 @@ export const Projects = () => {
               link="https://mynotes-47f36.web.app/home"
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12}sm={4}>
             <ProjectCard
               image={UserAuth}
               alt="User Auth image"
@@ -99,7 +101,7 @@ export const Projects = () => {
           </Grid>
         </Grid>
         <Grid container spacing={2}>
-          <Grid item xs={4}>
+          <Grid item xs={12}sm={4}>
             <ProjectCard
               image={Nsas}
               alt="Nsas site"
@@ -108,7 +110,7 @@ export const Projects = () => {
               link="https://selu-nsas.vercel.app/"
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12}sm={4}>
             <ProjectCard
               image={DipikaSite}
               alt="Dipika site"
@@ -117,7 +119,7 @@ export const Projects = () => {
               link="https://artbydipika-dg.web.app/"
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12}sm={4}>
             <ProjectCard
               image={BinaryTree}
               alt="Binary Tree"
