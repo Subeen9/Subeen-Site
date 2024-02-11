@@ -12,6 +12,7 @@ import { useTheme } from "@emotion/react";
 
 
 
+
 const CenterContent = styled("div")({
   display: "flex",
   justifyContent:'center',
@@ -57,14 +58,14 @@ const handleClick =()=>{
   })
 }
 
-export const Home = () => {
+export const Home = ({dark}) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <>
     <div id="home">
       
-      <Grid container spacing={2} style={{ backgroundColor: "#ADD8E6" }}>
+      <Grid container spacing={2} style={{ backgroundColor: dark?'#121212':"#ADD8E6" }}>
         <Grid item xs={12} sm={8} style={{ marginTop: "90px", marginBottom: isMobile ?'15px':'0px' }}>
           <img
             src={Cloud}
@@ -72,6 +73,7 @@ export const Home = () => {
             className="float"
             alt="cloud"
           />
+         
           <CenterContent>
             <HighlightedText variant="h4">I am Subin Bista</HighlightedText>
           </CenterContent>
@@ -122,11 +124,10 @@ export const Home = () => {
             </Hidden>
           </Grid>
         </Grid>
-        <Hidden smDown>
+        <Hidden smDown dark>
         <Grid item xs={0} sm={4}>
           {/* <img src={Cloud} style={{animation: 'float 5s ease-in-out infinite'}} className="float" alt="profile"/> */}
-          
-          <img
+         {dark? null:(  <img
             src={Subin}
             style={{
               marginTop: "2px",
@@ -135,7 +136,8 @@ export const Home = () => {
               
             }}
             alt="profile images"
-          />
+          />)}
+        
         </Grid>
         </Hidden>
       </Grid>

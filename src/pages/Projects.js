@@ -65,11 +65,11 @@ export const ProjectCard = ({ image, alt, title, text, link }) => {
     </Card>
   );
 };
-export const Projects = () => {
+export const Projects = ({dark}) => {
   return (
     <>
-      <div id="projects" style={{backgroundColor:'#F5F5F5'}}>
-        <h1 style={{ textAlign: "center" }}>Projects</h1>
+      <div id="projects" style={{backgroundColor: dark?'#121212':'#F5F5F5'}}> 
+        <h1 style={{ textAlign: "center", color:dark?'white':'black' }}>Projects</h1>
         <CustomDivider />
         <Grid container spacing={2}>
           <Grid item xs={12}sm={4}>
