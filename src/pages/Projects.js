@@ -16,7 +16,7 @@ import NoteKeeper from "../assests/NoteKeeper.png";
 import UserAuth from "../assests/UserAuth.png";
 import Nsas from "../assests/siteselu.png";
 import DipikaSite from "../assests/dipika.png";
-import BinaryTree from "../assests/Binary Tree.png";
+import Elibrary from '../assests/image.png'
 import "../App.css";
 const CustomDivider = styled(Divider)({
   width: "4%",
@@ -121,11 +121,11 @@ export const Projects = ({dark}) => {
           </Grid>
           <Grid item xs={12}sm={4}>
             <ProjectCard
-              image={BinaryTree}
+              image={Elibrary}
               alt="Binary Tree"
-              title="Tree Vs Bubble Sort"
-              text="This Java program provides a comparison between a binary tree traversal algorithm and bubble sort including the number of comparisons made during their execution."
-              link="https://github.com/Subeen9/Tree-Vs-Bubble-Sort"
+              title="Elibrary"
+              text="This platform connects teachers and students securely, enabling access to posts and resources. Teachers can share content with hidden URLs and embed Google Docs. It's a concise tool for educational communication."
+              link="https://e-lib-6ae39.web.app/"
             />
           </Grid>
         </Grid>
